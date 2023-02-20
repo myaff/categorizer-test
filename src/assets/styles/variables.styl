@@ -1,0 +1,48 @@
+$primary-color = #23A6F0;
+$error-color = #E74040;
+$white-color = #ffffff;
+$light-color = #EBEBEB;
+$dark-color = #252B42;
+$muted-color = #f0f0f0;
+
+$primary-set = {
+  base: $primary-color,
+  contrast: $white-color,
+}
+
+$error-set = {
+  base: $error-color,
+  contrast: $white-color,
+}
+
+$muted-set = {
+  base: $muted-color,
+  contrast: $dark-color,
+}
+$dark-set = {
+  base: $dark-color,
+  contrast: $white-color,
+}
+$font-base = Arial, sans-serif;
+$font-size-base = 16px;
+$font-color-base = $dark-color;
+
+$border-radius-base = 4px;
+$z-header = 10;
+$z-modal = 11;
+
+// ======================================================
+// BREAKPOINTS
+// ======================================================
+$breakpoints := {
+  xs: 0,
+  ms: 30rem,   // 480px
+  sm: 48rem,   // 768px
+  md: 64rem,   // 1024px
+  ml: 80rem,   // 1280px
+  lg: 90rem,   // 1440px
+  xl: 100rem,
+}
+$max-width = $breakpoints.xl;
+
+@import "./breakpoints.styl";
