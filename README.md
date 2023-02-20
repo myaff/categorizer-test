@@ -1,4 +1,4 @@
-# categigorizer-test
+# categorizer-test
 
 ## Project Setup
 
