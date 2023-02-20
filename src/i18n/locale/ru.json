@@ -1,0 +1,20 @@
+{
+  "yes": "Да",
+  "no": "Нет",
+  "save": "Сохранить",
+  "cancel": "Отменить",
+  "sure": "Вы уверены?",
+  "addArticle": "Добавить статью",
+  "addArticles": "Добавить статьи",
+  "removeArticle": "Удалить статью",
+  "articles": "0 статей | 1 статья | {count} статьи | {count} статей",
+  "addCategory": "Добавить категорию",
+  "addCategories": "Добавить категории",
+  "removeCategory": "Удалить категорию",
+  "categoryName": "Название категории",
+  "categoryParent": "Родительская категория",
+  "uncancelableAction": "Это действие нельзя будет отменить",
+  "founded": "Найдено",
+  "articlesEmpty": "Статей не найдено",
+  "categoriesEmpty": "Категорий пока нет"
+}
