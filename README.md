@@ -1,4 +1,5 @@
-# categorizer-test
+# Categorizer-test
+[Demo](https://myaff.github.io/categorizer-test/)
 
 ## Project Setup
 
