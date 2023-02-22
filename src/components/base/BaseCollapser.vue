@@ -1,5 +1,5 @@
 <template>
-  <div :open="opened" class="base-collapser" :class="{['base-collapser--opened']: opened}">
+  <div :open="opened" class="base-collapser" :class="{ ['base-collapser--opened']: opened }">
     <div class="base-collapser__summary" @click="$emit('update:opened', !opened)">
       <BaseIcon name="down" class="base-collapser__summary-icon" />
       <slot name="title">

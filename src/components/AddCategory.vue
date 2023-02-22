@@ -59,9 +59,7 @@ export default defineComponent({
     const isValid = computed(() => !!form.name);
     const categoriesStore = useCategoriesStore();
     const categories = computed(() => categoriesStore.list);
-    const options = computed(() =>
-      categories.value.map(c => ({ value: c.id, text: c.name }))
-    );
+    const options = computed(() => categories.value.map(c => ({ value: c.id, text: c.name })));
 
     const addCategory = () => {
       categoriesStore.addCategory(form);

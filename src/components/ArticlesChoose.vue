@@ -1,6 +1,11 @@
 <template>
   <div v-if="articles.length" class="articles-choose">
-    <BaseCheckboxGroup v-model="values" :list="paginatedList" :label="label" class="articles-choose__list" />
+    <BaseCheckboxGroup
+      v-model="values"
+      :list="paginatedList"
+      :label="label"
+      class="articles-choose__list"
+    />
     <BasePagination
       v-if="paginated"
       :total-items="articles.length"
@@ -44,7 +49,12 @@ export default defineComponent({
     const articles = computed(() =>
       articlesStore.articlesPlain.map(item => ({ value: item.id, text: item.title }))
     );
-    const { currentPage, paginatedList } = usePagination(articles, props.itemsPerPage, 1, props.paginated);
+    const { currentPage, paginatedList } = usePagination(
+      articles,
+      props.itemsPerPage,
+      1,
+      props.paginated
+    );
     watch(
       () => props.modelValue,
       () => (values.value = props.modelValue)

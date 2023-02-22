@@ -13,7 +13,12 @@
               </template>
               {{ t('articles', { count: totalCount }) }}
             </div>
-            <baseButton icon="plus" class="category-tree__add" @click.stop="updating = true" title-class="l-hidden-ms-down">
+            <baseButton
+              icon="plus"
+              class="category-tree__add"
+              @click.stop="updating = true"
+              title-class="l-hidden-ms-down"
+            >
               {{ t('addArticles') }}
             </baseButton>
             <BaseButton
@@ -64,7 +69,12 @@
           </BaseButton>
         </template>
       </BaseModal>
-      <SureModal v-if="sureActive" v-model:opened="sureActive" @save="handleSure(true)" @cancel="handleSure(false)"  />
+      <SureModal
+        v-if="sureActive"
+        v-model:opened="sureActive"
+        @save="handleSure(true)"
+        @cancel="handleSure(false)"
+      />
     </teleport>
   </section>
 </template>
@@ -110,7 +120,7 @@ export default defineComponent({
     opened: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   emits: ['remove', 'update'],
   setup(props, { emit }) {
@@ -140,7 +150,10 @@ export default defineComponent({
     const { active: sureActive, checkSure, handleSure } = useSureModal();
     const { t } = useI18n();
     const openedInner = ref(props.opened);
-    watch(() => props.opened, () => openedInner.value = props.opened);
+    watch(
+      () => props.opened,
+      () => (openedInner.value = props.opened)
+    );
     return {
       form,
       updating,

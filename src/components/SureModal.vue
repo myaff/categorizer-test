@@ -1,16 +1,16 @@
 <template>
   <teleport to="body">
     <BaseModal v-model:opened="active" :title="t('sure')" size="small">
-        {{ t('uncancelableAction') }}
-        <template #footer>
-          <BaseButton @click="handle('save')">
-            {{ t('yes') }}
-          </BaseButton>
-          <BaseButton color="muted" @click="handle('cancel')">
-            {{ t('no') }}
-          </BaseButton>
-        </template>
-      </BaseModal>
+      {{ t('uncancelableAction') }}
+      <template #footer>
+        <BaseButton @click="handle('save')">
+          {{ t('yes') }}
+        </BaseButton>
+        <BaseButton color="muted" @click="handle('cancel')">
+          {{ t('no') }}
+        </BaseButton>
+      </template>
+    </BaseModal>
   </teleport>
 </template>
 
@@ -30,11 +30,14 @@ export default defineComponent({
   setup(props, { emit }) {
     const active = ref(props.opened);
     watch(active, value => emit('update:opened', value));
-    watch(() => props.opened, () => active.value = props.opened);
+    watch(
+      () => props.opened,
+      () => (active.value = props.opened)
+    );
     const handle = eventType => {
       emit(eventType);
       active.value = false;
-    }
+    };
     const { t } = useI18n();
     return { active, handle, t };
   },

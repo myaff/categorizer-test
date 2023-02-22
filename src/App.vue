@@ -14,8 +14,18 @@
                 </template>
               </SearchForm>
               <AddCategory class="app__add" />
-              <BaseButton icon="rotate" color="error" class="app__reset" @click="checkSure(resetApp)"/>
-              <SureModal v-if="sureActive" v-model:opened="sureActive" @save="handleSure(true)" @cancel="handleSure(false)" />
+              <BaseButton
+                icon="rotate"
+                color="error"
+                class="app__reset"
+                @click="checkSure(resetApp)"
+              />
+              <SureModal
+                v-if="sureActive"
+                v-model:opened="sureActive"
+                @save="handleSure(true)"
+                @cancel="handleSure(false)"
+              />
             </div>
           </div>
         </header>
@@ -100,7 +110,7 @@ export default defineComponent({
     };
     const resetApp = () => {
       categoriesStore.reset();
-    }
+    };
     const { currentPage, itemsPerPage, paginatedList } = usePagination(categories, 3);
 
     const updateCategory = category => {
@@ -125,7 +135,7 @@ export default defineComponent({
       resetApp,
       checkSure,
       handleSure,
-      t
+      t,
     };
   },
 });

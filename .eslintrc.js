@@ -20,7 +20,7 @@ module.exports = {
         singleQuote: true,
         semi: true,
         tabWidth: 2,
-        trailingComma: 'es6',
+        trailingComma: 'es5',
         arrowParens: 'avoid',
         endOfLine: 'auto',
         printWidth: 100,

@@ -1,10 +1,9 @@
-import { computed, watch, watchEffect, reactive, onMounted, ref, triggerRef } from 'vue';
+import { computed, watch, reactive, onMounted } from 'vue';
 import { defineStore } from 'pinia';
 import generateUniqueId from '@/utils/generateUniqueId';
 import { useArticlesSearchStore } from '@/store/articlesSearch';
 import { useArticlesStore } from '@/store/articles';
 import Category from '@/models/Category';
-
 
 export const useCategoriesStore = defineStore('categories', () => {
   // state
@@ -22,15 +21,15 @@ export const useCategoriesStore = defineStore('categories', () => {
         .filter(id => articlesSearchStore.searchResults.has(id))
         .map(id => articlesStore.state.articles.get(id)),
     }));
-  })
+  });
   const list = computed(() => Object.values(shown.value));
-  
+
   const nodesMap = computed(() => {
     return list.value.reduce((map, item) => {
       map[item.id] = new Category(item);
       return map;
     }, {});
-  })
+  });
 
   const tree = computed(() => {
     return list.value.reduce((tree, node) => {

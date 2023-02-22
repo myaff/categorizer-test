@@ -10,7 +10,7 @@ export default function useSureModal() {
   const reset = () => {
     sure.fn = null;
     sure.args = [];
-  }
+  };
 
   const checkSure = (fn, ...args) => {
     sure.fn = fn;
@@ -22,7 +22,9 @@ export default function useSureModal() {
     active.value = false;
   };
 
-  watch(active, value => { if (!value) reset()});
+  watch(active, value => {
+    if (!value) reset();
+  });
 
   return { active, checkSure, handleSure };
 }
